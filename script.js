@@ -72,7 +72,7 @@ function colorOfGender(value){
         // inputW.style.background = 'rgb(0, 145, 255)';
         // inputW.style.borderBottom = '#FF1053 solid 2px';
 
-        // button.style.background = 'rgb(255, 252, 88)';
+        button.style.background = 'rgb(255, 252, 88)';
 
         button.addEventListener("mouseover", function() {
             button.style.backgroundColor = "rgb(255, 252, 88)";
