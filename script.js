@@ -196,8 +196,10 @@ function resCalories(){
   let sum = 0;
   let have = false
   for (let elem of document.querySelectorAll('.cal')){
-    sum += +elem.children[0].textContent
-    if (elem.children[0].textContent !== ''){have = true}
+    if (elem.textContent !== ''){
+      have = true;
+      sum += +elem.textContent
+    }
   }
 
   if (!have){cell.textContent = `...`; return} 
@@ -215,8 +217,11 @@ function resProtein(){
   let sum = 0;
   let have = false
   for (let elem of document.querySelectorAll('.pro')){
-    sum += +elem.children[0].textContent
-    if (elem.children[0].textContent !== ''){have = true}
+    
+    if (elem.textContent !== ''){
+      have = true
+      sum += +elem.textContent
+    }
   }
 
   
@@ -235,8 +240,11 @@ function resFats(){
   let sum = 0;
   let have = false
   for (let elem of document.querySelectorAll('.fat')){
-    sum += +elem.children[0].textContent
-    if (elem.children[0].textContent !== ''){have = true}
+    
+    if (elem.textContent !== ''){
+      have = true
+      sum += +elem.textContent
+    }
   }
 
   
@@ -256,8 +264,8 @@ function resCarbohydrates(){
   let sum = 0;
   let have = false
   for (let elem of document.querySelectorAll('.car')){
-    sum += +elem.children[0].textContent
-    if (elem.children[0].textContent !== ''){have = true}
+    sum += +elem.textContent
+    if (elem.textContent !== ''){have = true}
   }
 
   
@@ -294,7 +302,7 @@ if (document.getElementById('resCalories').textContent == '...' || document.getE
   let listRes = document.getElementById('res')
 
   //ostCalories.innerHTML = `${+listNorm.children[0].children[0].textContent - +listRes.children[0].children[0].textContent}`
-  let calories = +listNorm.children[0].children[0].textContent - +listRes.children[0].children[0].textContent
+  let calories = +(listNorm.children[0].children[0].textContent - +listRes.children[0].children[0].textContent).toFixed(2)
   // if (calories % 0.1 !== 0){ostCalories.innerHTML = `${+calories.toFixed(2)}`}
   //   else if (calories % 1 !== 0){ostCalories.innerHTML = `${+calories.toFixed(1)}`}
   //   else{ostCalories.innerHTML = `${+calories}`}
@@ -303,7 +311,7 @@ if (document.getElementById('resCalories').textContent == '...' || document.getE
   if (calories <= 0){ostCalories.style.color = 'red'; ostCalories.innerHTML = `${-calories}`}
   else{ostCalories.style.color = 'green'}
 
-  let protein = +listNorm.children[1].children[0].textContent - +listRes.children[1].children[0].textContent
+  let protein = +(listNorm.children[1].children[0].textContent - +listRes.children[1].children[0].textContent).toFixed(2)
   // if (protein % 0.1 !== 0){ostProtein.innerHTML = `${+protein.toFixed(2)}`}
   //   else if (protein % 1 !== 0){ostProtein.innerHTML = `${+protein.toFixed(1)}`}
   //   else{ostProtein.innerHTML = `${+protein}`}
@@ -312,7 +320,7 @@ if (document.getElementById('resCalories').textContent == '...' || document.getE
     if (protein <= 0){ostProtein.style.color = 'red'; ostProtein.innerHTML = `${-protein}`}
     else{ostProtein.style.color = 'green'}
 
-  let fats = +listNorm.children[2].children[0].textContent - +listRes.children[2].children[0].textContent
+  let fats = +(listNorm.children[2].children[0].textContent - +listRes.children[2].children[0].textContent).toFixed(2)
   // if (fats % 0.1 !== 0){ostFats.innerHTML = `${+fats.toFixed(2)}`}
   //   else if (fats % 1 !== 0){ostFats.innerHTML = `${+fats.toFixed(1)}`}
   //   else{ostFats.innerHTML = `${+fats}`}
@@ -321,7 +329,7 @@ if (document.getElementById('resCalories').textContent == '...' || document.getE
     if (fats <= 0){ostFats.style.color = 'red'; ostFats.innerHTML = `${-fats}`}
     else{ostFats.style.color = 'green'}
 
-  let carbohydrates = +listNorm.children[3].children[0].textContent - +listRes.children[3].children[0].textContent
+  let carbohydrates = +(listNorm.children[3].children[0].textContent - +listRes.children[3].children[0].textContent).toFixed(2)
   // if (carbohydrates % 0.1 !== 0){ostCarbohydrates.innerHTML = `${+carbohydrates.toFixed(2)}`}
   //   else if (carbohydrates % 1 !== 0){ostCarbohydrates.innerHTML = `${+carbohydrates.toFixed(1)}`}
   //   else{ostCarbohydrates.innerHTML = `${+carbohydrates}`}
