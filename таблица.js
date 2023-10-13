@@ -1723,4 +1723,4 @@ function getCarbohydrates(product){ //дописать switch
         case 'лимонад':
             return 12
 }
-
+}
