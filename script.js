@@ -300,7 +300,7 @@ if (document.getElementById('resCalories').textContent == '...' || document.getE
   //   else{ostCalories.innerHTML = `${+calories}`}
   saveValueInCell(calories, ostCalories)
 
-  if (calories <= 0){ostCalories.style.color = 'red'}
+  if (calories <= 0){ostCalories.style.color = 'red'; ostCalories.innerHTML = `${-calories}`}
   else{ostCalories.style.color = 'green'}
 
   let protein = +listNorm.children[1].children[0].textContent - +listRes.children[1].children[0].textContent
@@ -309,7 +309,7 @@ if (document.getElementById('resCalories').textContent == '...' || document.getE
   //   else{ostProtein.innerHTML = `${+protein}`}
   saveValueInCell(protein, ostProtein)
 
-    if (protein <= 0){ostProtein.style.color = 'red'}
+    if (protein <= 0){ostProtein.style.color = 'red'; ostProtein.innerHTML = `${-protein}`}
     else{ostProtein.style.color = 'green'}
 
   let fats = +listNorm.children[2].children[0].textContent - +listRes.children[2].children[0].textContent
@@ -318,7 +318,7 @@ if (document.getElementById('resCalories').textContent == '...' || document.getE
   //   else{ostFats.innerHTML = `${+fats}`}
   saveValueInCell(fats, ostFats)
 
-    if (fats <= 0){ostFats.style.color = 'red'}
+    if (fats <= 0){ostFats.style.color = 'red'; ostFats.innerHTML = `${-fats}`}
     else{ostFats.style.color = 'green'}
 
   let carbohydrates = +listNorm.children[3].children[0].textContent - +listRes.children[3].children[0].textContent
@@ -327,7 +327,7 @@ if (document.getElementById('resCalories').textContent == '...' || document.getE
   //   else{ostCarbohydrates.innerHTML = `${+carbohydrates}`}
   saveValueInCell(carbohydrates, ostCarbohydrates)
 
-    if (carbohydrates <= 0){ostCarbohydrates.style.color = 'red'}
+    if (carbohydrates <= 0){ostCarbohydrates.style.color = 'red'; ostCarbohydrates.innerHTML = `${-carbohydrates}`}
     else{ostCarbohydrates.style.color = 'green'}
 }
 
