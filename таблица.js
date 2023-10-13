@@ -500,8 +500,7 @@ function calculateProtein(input) {
 
     if (getProtein(product) === false){return}
 
-    var protein = +(grams * getProtein(product) / 100).toFixed(2); 
-    alert(protein)// Здесь нужно добавить логику расчета калорий для каждого продукта
+    var protein = +(grams * getProtein(product) / 100).toFixed(2); // Здесь нужно добавить логику расчета калорий для каждого продукта
     // if (protein % 100 !== 0){proteinCell.innerHTML = `<p>${protein}</p>`}
     // else if (protein % 10 !== 0){proteinCell.innerHTML = `<p>${protein.toFixed(1)}</p>`}
     // else{proteinCell.innerHTML = `<p>${protein}</p>`}
