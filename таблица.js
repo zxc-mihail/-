@@ -479,6 +479,7 @@ function addingListener(){
 
 function calculateCalories(input) {
     var grams = input.value;
+    if (grams < 0){alert('интересная масса'); input.value = ''; return}
     var caloriesCell = input.parentNode.nextElementSibling;
     var product = input.parentNode.previousElementSibling.children[0].value
 
@@ -493,6 +494,7 @@ function calculateCalories(input) {
 
 function calculateProtein(input) {
     var grams = input.value;
+    if (grams < 0){input.value = ''; return}
     var proteinCell = input.parentNode.nextElementSibling.nextElementSibling;
     var product = input.parentNode.previousElementSibling.children[0].value
 
@@ -508,6 +510,7 @@ function calculateProtein(input) {
 
 function calculateFats(input) {
     var grams = input.value;
+    if (grams < 0){input.value = ''; return}
     var fatsCell = input.parentNode.nextElementSibling.nextElementSibling.nextElementSibling;
     var product = input.parentNode.previousElementSibling.children[0].value
 
@@ -523,6 +526,7 @@ function calculateFats(input) {
 
 function calculateCarbohydrates(input) {
     var grams = input.value;
+    if (grams < 0){input.value = ''; return}
     var carbohydratesCell = input.parentNode.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling;
     var product = input.parentNode.previousElementSibling.children[0].value
 
