@@ -1127,13 +1127,13 @@ function getProtein(product){ //дописать switch
         case 'сок':
             return 0.7
         case 'газировка':
-            return 0
+            return 0.1
         case 'квас':
             return 0.2
         case 'компот':
             return 0.1
         case 'лимонад':
-            return 0
+            return 0.1
 }
 }
 
@@ -1196,7 +1196,7 @@ function getFats(product){ //дописать switch
 
         //зелень
         case 'лук зеленый':
-            return 0
+            return 0.1
         case 'лук репчатый':
             return 0.2
         case 'петрушка':
@@ -1360,7 +1360,7 @@ function getFats(product){ //дописать switch
         case 'творог':
             return 18
         case 'творог (0%)':
-            return 0
+            return 0.1
 
         //хлебо-булочные
         case 'лепешка':
@@ -1422,13 +1422,13 @@ function getFats(product){ //дописать switch
         case 'сок':
             return 0.1
         case 'газировка':
-            return 0
+            return 0.1
         case 'квас':
-            return 0
+            return 0.1
         case 'компот':
             return 0.1
         case 'лимонад':
-            return 0
+            return 0.1
 }
 }
 
