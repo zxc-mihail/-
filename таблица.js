@@ -483,7 +483,7 @@ function calculateCalories(input) {
     var caloriesCell = input.parentNode.nextElementSibling;
     var product = input.parentNode.previousElementSibling.children[0].value
 
-    if (getCalories(product) == false){input.value = ''; return}
+    if (getCalories(product) === false){input.value = ''; return}
 
     var calories = +(grams * getCalories(product) / 100).toFixed(2); // Здесь нужно добавить логику расчета калорий для каждого продукта
     // if (calories % 100 !== 0){caloriesCell.innerHTML = `<p>${calories}</p>`}
@@ -498,9 +498,10 @@ function calculateProtein(input) {
     var proteinCell = input.parentNode.nextElementSibling.nextElementSibling;
     var product = input.parentNode.previousElementSibling.children[0].value
 
-    if (getProtein(product) == false){return}
+    if (getProtein(product) === false){return}
 
-    var protein = +(grams * getProtein(product) / 100).toFixed(2); // Здесь нужно добавить логику расчета калорий для каждого продукта
+    var protein = +(grams * getProtein(product) / 100).toFixed(2); 
+    alert(protein)// Здесь нужно добавить логику расчета калорий для каждого продукта
     // if (protein % 100 !== 0){proteinCell.innerHTML = `<p>${protein}</p>`}
     // else if (protein % 10 !== 0){proteinCell.innerHTML = `<p>${protein.toFixed(1)}</p>`}
     // else{proteinCell.innerHTML = `<p>${protein}</p>`}
@@ -530,7 +531,7 @@ function calculateCarbohydrates(input) {
     var carbohydratesCell = input.parentNode.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling;
     var product = input.parentNode.previousElementSibling.children[0].value
 
-    if (getCarbohydrates(product) == false){return}
+    if (getCarbohydrates(product) === false){return}
 
     var carbohydrates = +(grams * getCarbohydrates(product) / 100).toFixed(2); // Здесь нужно добавить логику расчета калорий для каждого продукта
     // if (carbohydrates % 100 !== 0){carbohydratesCell.innerHTML = `<p>${carbohydrates}</p>`}
@@ -1127,13 +1128,13 @@ function getProtein(product){ //дописать switch
         case 'сок':
             return 0.7
         case 'газировка':
-            return 0.1
+            return 0
         case 'квас':
             return 0.2
         case 'компот':
             return 0.1
         case 'лимонад':
-            return 0.1
+            return 0
 }
 }
 
@@ -1196,7 +1197,7 @@ function getFats(product){ //дописать switch
 
         //зелень
         case 'лук зеленый':
-            return 0.1
+            return 0
         case 'лук репчатый':
             return 0.2
         case 'петрушка':
@@ -1360,7 +1361,7 @@ function getFats(product){ //дописать switch
         case 'творог':
             return 18
         case 'творог (0%)':
-            return 0.1
+            return 0
 
         //хлебо-булочные
         case 'лепешка':
@@ -1422,13 +1423,13 @@ function getFats(product){ //дописать switch
         case 'сок':
             return 0.1
         case 'газировка':
-            return 0.1
+            return 0
         case 'квас':
-            return 0.1
+            return 0
         case 'компот':
             return 0.1
         case 'лимонад':
-            return 0.1
+            return 0
 }
 }
 
@@ -1722,4 +1723,4 @@ function getCarbohydrates(product){ //дописать switch
         case 'лимонад':
             return 12
 }
-}
+
