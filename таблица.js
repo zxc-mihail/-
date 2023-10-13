@@ -255,6 +255,8 @@ function clearTable(){
         table.deleteRow(1);
       }
 
+    addRow()
+
 //     table.children[2].innerHTML = `<tr>
 //     <td>
 //     <select class="productSelect">
