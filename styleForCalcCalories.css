@@ -22,7 +22,7 @@ body{
 
 .information{
     transition: all 0.7s;
-    padding: 5px 17px 15px;
+    padding: 5px 17px 0;
     border-radius: 20px;
     border: rgb(0, 0, 0) solid 1px;
     background: rgb(206, 206, 206);
@@ -50,12 +50,19 @@ body{
     display: flex;
 }
 
-.row:last-child{
-    padding-bottom: 5px;
+.row:last-child div{
+    /* padding-bottom: 5px; */
+    display: flex;
+}
+
+.row{
+    padding: 0 3px 25px;
 }
 
 .row > div{
     width: 200px;
+    justify-content: center;
+    align-items: center;
 }
 
 #gender {
@@ -76,7 +83,7 @@ input::-webkit-inner-spin-button {
 .inputs div {
     /* width: 50%; */
     /* width: 100%; */
-    padding: 0 3px 15px;
+    /* padding: 0 3px 15px; */
     display: flex;
 }
 
@@ -105,27 +112,33 @@ input::-webkit-inner-spin-button {
 }
 
 .inputs input:focus, .inputs select:focus, #BtnSubmit:hover{
-    box-shadow: 0 0 25px rgb(160, 255, 246) ;
-
-
+    box-shadow: 0 0 25px rgb(160, 255, 246);
 }
 
-.information #BtnSubmit{
+.information button{
     display: block;
     border: none;
     border-radius: 8px;
     width: 90px;
     background-color: rgb(160, 255, 246);
+    /* background-color: rgb(110, 110, 255); */
     height: 30px;
-    margin: auto;
+    /* margin: auto; */
     text-align: center;
-
-
 }
 
-.information #BtnSubmit:hover{
-    background: rgb(2, 255, 230);
+#clear > button{
+    background: #FF1053;
+}
 
+#BtnSubmit:hover{
+    background: rgb(2, 255, 230);
+    /* background: rgb(98, 98, 234); */
+}
+
+#clear > button:hover{
+    background: #ff0015;
+    box-shadow: 0 0 15px #FF1053;
 }
 
 
