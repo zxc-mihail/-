@@ -1,13 +1,29 @@
-let gender
-let weight
-let height
-let years
+// let gender
+// let weight
+// let height
+// let years
+
+// let gender = document.getElementById('select').value
+// let weight = document.getElementById('inputWeight').value
+// let height = document.getElementById('inputHeight').value
+// let years = document.getElementById('inputYears').value
+
+// localStorage.clear()
+
+setInfo()
+
 function saveInfo(event){
     event.preventDefault()
-    gender = document.getElementById('select').value
-    weight = document.getElementById('inputWeight').value
-    height = document.getElementById('inputHeight').value
-    years = document.getElementById('inputYears').value
+    // gender = document.getElementById('select').value
+    // weight = document.getElementById('inputWeight').value
+    // height = document.getElementById('inputHeight').value
+    // years = document.getElementById('inputYears').value
+
+    let gender = document.getElementById('select').value
+    let weight = document.getElementById('inputWeight').value
+    let height = document.getElementById('inputHeight').value
+    let years = document.getElementById('inputYears').value
+
     if (gender === "" || weight === "" || height === '' || years === '') {
         alert("Пожалуйста, заполните все поля");
         return
@@ -29,6 +45,8 @@ function saveInfo(event){
     colorOfGender(gender)
     calculateNorm(gender, weight, height, years)
     calculateOst()
+
+    saveInfoInLocalStorage(gender, weight, height, years)
 }
 
 function isValid (value){
@@ -339,9 +357,33 @@ if (document.getElementById('resCalories').textContent == '...' || document.getE
     else{ostCarbohydrates.style.color = 'green'}
 }
 
-
 function saveValueInCell(value, cell){
   if (value % 0.1 !== 0){cell.innerHTML = `${+value.toFixed(2)}`}
     else if (value % 1 !== 0){cell.innerHTML = `${+value.toFixed(1)}`}
     else{cell.innerHTML = `${+value}`}
+}
+
+function saveInfoInLocalStorage(gender, weight, height, years){
+  localStorage.setItem('gender', gender)
+  localStorage.setItem('weight', weight)
+  localStorage.setItem('height', height)
+  localStorage.setItem('years', years)
+}
+
+function setInfo(){
+  if (localStorage.getItem('gender') !== null){
+    document.getElementById('select').value = localStorage.getItem('gender')
+    document.getElementById('inputWeight').value = localStorage.getItem('weight')
+    document.getElementById('inputHeight').value = localStorage.getItem('height')
+    document.getElementById('inputYears').value = localStorage.getItem('years')
+
+    colorOfGender(document.getElementById('select').value)
+
+    calculateNorm(document.getElementById('select').value,
+                  document.getElementById('inputWeight').value,
+                  document.getElementById('inputHeight').value, 
+                  document.getElementById('inputYears').value)
+
+    calculateOst()
+  }
 }
