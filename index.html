@@ -26,18 +26,25 @@
                     <div id="weight">
                         <input type="number" name="weight" id="inputWeight" placeholder="Введите свой вес (кг)" required>
                     </div>
-                    </div>
-                    <div class="row">
+                </div>
+                <div class="row">
                     <div id="years">
                         <input type="number" name="years" id="inputYears" placeholder="Введите свой возраст" required>
                     </div>
 
                     <div id="height">
-                        <input type="number" name="height" id="inputHeight" placeholder="Введите свой рост (см)" required>
+                        <input type="number" name="height" id="inputHeight" placeholder="Введите свой рост" required>
                     </div>
                 </div>
             </div>
-            <button type = 'submit' id="BtnSubmit" value = 'Сохранить' onclick = 'saveInfo(event)'>Сохранить</button>
+            <div class="row">
+                <div id="submit">
+                    <button type = 'submit' id="BtnSubmit" value = 'Сохранить' onclick = 'saveInfo(event)'>Сохранить</button>
+                </div>
+                <div id="clear">
+                    <button type = 'submit' id="'BtnClearInfo" value = 'Очистить' onclick = 'clearInfo(event)'>Очистить</button>
+                </div>
+            </div>
         </form>
         </div>
 
