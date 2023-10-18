@@ -62,9 +62,10 @@ function colorOfGender(value){
     let select = document.getElementById('select')
     let head = document.getElementById('head')
 
-    head.style.color = '#fff'
+    
 
     if (value == 'Мужчина'){
+      head.style.color = '#fff'
 
       function setForInput(input){
         input.style.background = 'rgb(0, 145, 255)';
@@ -116,7 +117,8 @@ function colorOfGender(value){
             select.style.boxShadow = "0 0 0 0";
           });
     }
-    else{
+    else if(value == 'Женщина'){
+      head.style.color = '#fff'
 
       function setForInput(input){
 
@@ -147,15 +149,15 @@ function colorOfGender(value){
         select.style.borderBottom = 'rgb(32, 158, 255) solid 2px'
 
         // button.style.background = '#FFA500'
-        button.style.background = 'rgb(94, 94, 255)'
+        button.style.background = 'rgb(110, 110, 255)' 
 
         button.addEventListener("mouseover", function() {
             // button.style.backgroundColor = "#FFC0CB";
-            button.style.backgroundColor = "rgb(43, 43, 255)";
+            button.style.backgroundColor = "rgb(98, 98, 234)"; 
           });
           
           button.addEventListener("mouseout", function() {
-            button.style.backgroundColor = "rgb(94, 94, 255)";
+            button.style.backgroundColor = "rgb(110, 110, 255)"; 
           });
 
           // inputW.addEventListener("focus", function() {
@@ -174,10 +176,68 @@ function colorOfGender(value){
             select.style.boxShadow = "0 0 0 0";
           });
     }
+    else{
+      head.style.color = 'black'
+
+      function setForInput(input){
+        input.style.background = 'rgb(180, 180, 180)';
+        input.style.borderBottom = 'rgb(160, 255, 246) solid 2px';
+
+        input.addEventListener("focus", function() {
+          input.style.boxShadow = "0 0 25px rgb(160, 255, 246)";
+        });
+        
+        input.addEventListener("blur", function() {
+          input.style.boxShadow = "0 0 0 0";
+        });
+      }
+
+      setForInput(document.getElementById('inputWeight'))
+      setForInput(document.getElementById('inputHeight'))
+      setForInput(document.getElementById('inputYears'))
+
+        info.style.background = 'rgb(206, 206, 206)';
+
+        select.style.background = 'rgb(180, 180, 180)';
+        select.style.borderBottom = 'rgb(160, 255, 246) solid 2px';
+
+        button.style.backgroundColor = 'rgb(160, 255, 246)';
+
+        button.addEventListener("mouseover", function() {
+            button.style.backgroundColor = "rgb(2, 255, 230)";
+          });
+          
+          button.addEventListener("mouseout", function() {
+            button.style.backgroundColor = "rgb(160, 255, 246)";
+          });
+
+          select.addEventListener("focus", function() {
+            select.style.boxShadow = "0 0 25px rgb(160, 255, 246)";
+          });
+          
+          select.addEventListener("blur", function() {
+            select.style.boxShadow = "0 0 0 0";
+          });
+    }
 }
 
+function clearInfo(event){
+  event.preventDefault()
+
+  localStorage.clear()
+
+  document.getElementById('select').value = ''
+  document.getElementById('inputWeight').value = ''
+  document.getElementById('inputHeight').value = ''
+  document.getElementById('inputYears').value = ''
+
+  colorOfGender()
+  calculateNorm()
+  calculateOst()
+}
 
 function calculateNorm(gender, weight, height, years){
+
   // Для женщин: (10 х вес в кг) + (6,25 х рост в см) – (5 х возраст в г) – 161; 
   // Для мужчин: (10 х вес в кг) + (6,25 х рост в см) – (5 х возраст в г) + 5.
 
@@ -189,6 +249,14 @@ function calculateNorm(gender, weight, height, years){
   let protein = list.children[1].children[0];
   let fats = list.children[2].children[0];
   let carbohydrates = list.children[3].children[0];
+
+  if(!gender){calories.innerHTML = '...';
+                          protein.innerHTML = '...';
+                          fats.innerHTML = '...';
+                          carbohydrates.innerHTML = '...';
+                          return}
+
+
   if (gender == 'Женщина'){
     calories.innerHTML = `${(Math.round(10 * weight) + (6.25 * height) - (5 * years) - 161)}`
     protein.innerHTML = `${Math.round(1.7 * weight)}`
